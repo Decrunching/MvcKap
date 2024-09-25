@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MvcKap.Models.Calculations>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IvftRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IvftBolusVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EphedrineConc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlycopyrrolateConc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TranexamicAcidConc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KetamineConc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FentanylConc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IvftRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IvftBolusVolume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EphedrineConc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GlycopyrrolateConc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TranexamicAcidConc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KetamineConc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FentanylConc)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

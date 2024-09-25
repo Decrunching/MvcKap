@@ -1,0 +1,63 @@
+﻿@model MvcKap.Models.Calculations
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Calculations</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IvftRate" class="control-label"></label>
+                <input asp-for="IvftRate" class="form-control" />
+                <span asp-validation-for="IvftRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IvftBolusVolume" class="control-label"></label>
+                <input asp-for="IvftBolusVolume" class="form-control" />
+                <span asp-validation-for="IvftBolusVolume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EphedrineConc" class="control-label"></label>
+                <input asp-for="EphedrineConc" class="form-control" />
+                <span asp-validation-for="EphedrineConc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GlycopyrrolateConc" class="control-label"></label>
+                <input asp-for="GlycopyrrolateConc" class="form-control" />
+                <span asp-validation-for="GlycopyrrolateConc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TranexamicAcidConc" class="control-label"></label>
+                <input asp-for="TranexamicAcidConc" class="form-control" />
+                <span asp-validation-for="TranexamicAcidConc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KetamineConc" class="control-label"></label>
+                <input asp-for="KetamineConc" class="form-control" />
+                <span asp-validation-for="KetamineConc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FentanylConc" class="control-label"></label>
+                <input asp-for="FentanylConc" class="form-control" />
+                <span asp-validation-for="FentanylConc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

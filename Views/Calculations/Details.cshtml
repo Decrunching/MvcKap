@@ -1,0 +1,60 @@
+﻿@model MvcKap.Models.Calculations
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Calculations</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IvftRate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IvftRate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IvftBolusVolume)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IvftBolusVolume)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EphedrineConc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EphedrineConc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GlycopyrrolateConc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GlycopyrrolateConc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TranexamicAcidConc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TranexamicAcidConc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KetamineConc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KetamineConc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FentanylConc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FentanylConc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
