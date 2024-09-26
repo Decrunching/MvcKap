@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using MvcKap.Data;
+using MvcKap.Models;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MvcKapContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcKapContext") ?? throw new InvalidOperationException("Connection string 'MvcKapContext' not found.")));
@@ -9,6 +9,13 @@ builder.Services.AddDbContext<MvcKapContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    PatientSeedData.Initialise(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

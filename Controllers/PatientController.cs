@@ -5,11 +5,11 @@ using MvcKap.Models;
 
 namespace MvcKap.Controllers
 {
-    public class PatientsController : Controller
+    public class PatientController : Controller
     {
         private readonly MvcKapContext _context;
 
-        public PatientsController(MvcKapContext context)
+        public PatientController(MvcKapContext context)
         {
             _context = context;
         }
@@ -49,7 +49,7 @@ namespace MvcKap.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Species,Age,BodyWeight,LeanBodyWeight,Bcs,RespRate,HeartRate,BpSystolic,BpMean,BpDiastolic")] Patient patient)
+        public async Task<IActionResult> Create([Bind("Id,Species,AgeYears,AgeMonths,BodyWeight,LeanBodyWeight,Bcs,RespRate,HeartRate,BpSystolic,BpMean,BpDiastolic")] Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace MvcKap.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Species,Age,BodyWeight,LeanBodyWeight,Bcs,RespRate,HeartRate,BpSystolic,BpMean,BpDiastolic")] Patient patient)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Species,AgeYears,AgeMonths,BodyWeight,LeanBodyWeight,Bcs,RespRate,HeartRate,BpSystolic,BpMean,BpDiastolic")] Patient patient)
         {
             if (id != patient.Id)
             {
